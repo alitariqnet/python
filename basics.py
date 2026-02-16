@@ -152,3 +152,43 @@ cubes.append(216)  # add the cube of 6
 cubes.append(7 ** 3)  # and the cube of 7
 cubes
 print(cubes)
+
+# Object referencing 
+rgb = ["Red", "Green", "Blue"]
+rgba = rgb
+same = id(rgb) == id(rgba)  # they reference the same object
+print(same)
+rgba.append("Yellow")
+rgba.append("Alph")
+print(rgb)
+# All slice operations return a new list containing the requested elements. This means that the following slice returns a shallow copy of the list:
+# Shallow copy
+correct_rgba = rgba[:]
+correct_rgba[-1] = "Alpha"
+print(correct_rgba)
+
+print(rgba)
+
+letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+print(letters)
+
+# replace some values
+letters[2:5] = ['C', 'D', 'E']
+print(letters)
+
+# now remove them
+letters[2:5] = []
+print(letters)
+
+# clear the list by replacing all the elements with an empty list
+letters[:] = []
+print(letters)
+
+a = ['a', 'b', 'c']
+n = [1, 2, 3]
+x = [a, n]
+print(x)
+
+print(x[0])
+
+print(x[0][1])
