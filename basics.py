@@ -209,8 +209,8 @@ while a < 1000:
     a, b = b, a+b
 
 
-x = int(input("Please enter an integer: "))
-
+# x = int(input("Please enter an integer: "))
+x = 1
 if x < 0:
     x = 0
     print('Negative changed to zero')
@@ -242,3 +242,35 @@ for user, status in users.items():
 
 
 print(active_users)
+
+for i in range(5):
+    print("Value of i now: "+str(i))
+
+print(list(range(5, 10)))
+
+
+print(list(range(0, 10, 3)))
+
+
+print(list(range(-10, -100, -30)))
+
+a = ['Mary', 'had', 'a', 'little', 'lamb']
+for i in range(len(a)):
+    print(i, a[i])
+
+print(range(10))
+
+print(sum(range(4)))  # 0 + 1 + 2 + 3
+
+for n in range(2, 10):
+    for x in range(2, n):
+        if n % x == 0:
+            print(f"{n} equals {x} * {n//x}")
+            break
+
+
+for num in range(2, 10):
+    if num % 2 == 0:
+        print(f"Found an even number {num}")
+        continue
+    print(f"Found an odd number {num}")
