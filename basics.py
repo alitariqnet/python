@@ -414,3 +414,41 @@ cheeseshop("Limburger", "It's very runny, sir.",
            sketch="Cheese Shop Sketch")
 
 
+def standard_arg(arg):
+    print(arg)
+
+def pos_only_arg(arg, /):
+    print(arg)
+
+def pos_only_args(arg1, arg2, /):
+    print(arg1, arg2)
+
+def kwd_only_arg(*, arg):
+    print(arg)
+
+def combined_example(pos_only, /, standard, *, kwd_only):
+    print(pos_only, standard, kwd_only)
+
+standard_arg(10)
+standard_arg(arg=10)
+
+pos_only_arg(12)
+# pos_only_arg(arg=13) : error
+
+pos_only_args(16,17)
+
+kwd_only_arg(arg=15)
+# kwd_only_arg(16) : error
+
+# combined_example(1,2,3) : error
+combined_example(1,2, kwd_only=3) 
+
+def write_multiple_items(file, separator, *args):
+    file.write(separator.join(args))
+
+def concat(*args, sep="/"):
+    return sep.join(args)
+
+print(concat("earth", "mars", "venus"))
+
+print(concat("earth", "mars", "venus", sep="."))
