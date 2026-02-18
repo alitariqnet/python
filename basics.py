@@ -474,3 +474,17 @@ print(f(1))
 pairs = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]
 pairs.sort(key=lambda pair: pair[1])
 print(pairs)
+
+print("\n\n\n")
+
+def my_function():
+    """Do nothing, but document it.
+
+    No, really, it doesn't do anything:
+
+        >>> my_function()
+        >>>
+    """
+    pass
+
+print(my_function.__doc__)
