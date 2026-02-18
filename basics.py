@@ -336,3 +336,32 @@ where_is((0, 0))
 where_is((0, 5))
 where_is((5, 0))
 where_is((5, 5))
+
+def fib(n):    # write Fibonacci series less than n
+    """Print a Fibonacci series less than n."""
+    a, b = 0, 1
+    while a < n:
+        print(a, end=' ')
+        a, b = b, a+b
+    print()
+
+# Now call the function we just defined:
+fib(2000)
+
+list = [1,2,3,4,5,6,7,8,9]
+list = list + [10] # appen()
+
+print(list)
+print(list[3:]+[11])
+
+def ask_ok(prompt, retries=4, reminder='Please try again!'):
+    while True:
+        reply = input(prompt)
+        if reply in {'y', 'ye', 'yes'}:
+            return True
+        if reply in {'n', 'no', 'nop', 'nope'}:
+            return False
+        retries = retries - 1
+        if retries < 0:
+            raise ValueError('invalid user response')
+        print(reminder)
